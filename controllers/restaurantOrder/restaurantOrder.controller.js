@@ -65,7 +65,7 @@ const findOrder = async (req, res) => {
         const orderFind = await Order.find({
             "items.orderName": { $regex: orderName, $options: "i" }
         })
-        console.log(orderFind)
+
         return res.status(200).json(orderFind);
     } catch (error) {
         console.log(error);
@@ -83,7 +83,6 @@ const getOneOrder = async (req, res) => {
             return res.status(404).json({ message: "Order not found" });
         }
 
-        console.log(orderFind);
         return res.status(200).json(orderFind);
     } catch (error) {
         console.log(error);
