@@ -2,4 +2,8 @@
 
 # After installing project run
 
-`npm run cano`
+`npm start`
+
+# For build server run
+
+`npm run build`
