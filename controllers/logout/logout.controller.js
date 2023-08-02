@@ -3,7 +3,7 @@ const User = require('../../models/User');
 const userLogout = async (req, res) => {
     const cookies = req.cookies;
     const { userId } = req.body;
-
+    console.log(userId)
     try {
 
         const user = await User.findOne({ _id: userId });
