@@ -23,6 +23,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.options('*', cors())
+app.options(cors({
+    origin: 'https://order-ggd.netlify.app/'
+}));
 app.use('/register', register);
 app.use('/auth', userAuth);
 app.use('/logout', userLogOut);
@@ -32,6 +35,6 @@ app.use(verifyJWT);
 app.use(notFound);
 app.use(errorHandler);
 
-console.log(boxen(chalk.red.bgRed.bold("\n" + "Welcome to nicolas ggd server" + "\n"), {padding: 1, borderColor: 'red', dimBorder: true}) + "\n");
+console.log(boxen(chalk.red.bgRed.bold("\n" + "Welcome to nicolas ggd server" + "\n"), { padding: 1, borderColor: 'red', dimBorder: true }) + "\n");
 
 app.listen(process.env.PORT, console.log(`Server running on port ${process.env.PORT}`));
