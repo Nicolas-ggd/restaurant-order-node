@@ -22,7 +22,9 @@ app.use(credentials);
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
-app.options('*', cors())
+app.use(cors({
+    origin: '*'
+}));
 app.options(cors({
     origin: 'https://order-ggd.netlify.app/'
 }));
